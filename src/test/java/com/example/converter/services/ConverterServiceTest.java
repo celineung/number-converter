@@ -43,7 +43,7 @@ public class ConverterServiceTest {
     @Test
     public void shouldReturnCorrectNumberWhenThreeChar() {
         String nbStr = converterService.convert(750);
-        assertTrue(nbStr.equals("seven hundred fixty"));
+        assertTrue(nbStr.equals("seven hundred fifty"));
     }
 
     @Test
@@ -59,9 +59,9 @@ public class ConverterServiceTest {
     }
 
     @Test
-    public void shouldReturnCorrectNumberWhenSixChar() {
-        String nbStr = converterService.convert(820976);
-        assertTrue(nbStr.equals("height hundred twenty thousand nine hundred seventy six"));
+    public void shouldReturnCorrectNumberWhenLimit() {
+        String nbStr = converterService.convert(99999);
+        assertTrue(nbStr.equals("ninety nine thousand nine hundred ninety nine"));
     }
 
 }
