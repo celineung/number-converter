@@ -1,5 +1,7 @@
 package com.example.converter.services;
 
+import com.example.converter.exceptions.BigNumberException;
+import com.example.converter.exceptions.NegativeNumberException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -16,12 +18,12 @@ public class ConverterServiceTest {
     @InjectMocks
     private ConverterService converterService;
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = NegativeNumberException.class)
     public void shouldReturnErrorWhenNegativeNumber() {
         converterService.convert(-90);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = BigNumberException.class)
     public void shouldReturnErrorWhenNumberMoreThanSixChar() {
         converterService.convert(1000000);
     }
@@ -29,13 +31,13 @@ public class ConverterServiceTest {
     @Test
     public void shouldReturnCorrectNumberWhenSingleChar() {
         String nbStr = converterService.convert(3);
-        assertTrue(nbStr.equals("3"));
+        assertTrue(nbStr.equals("three"));
     }
 
     @Test
     public void shouldReturnCorrectNumberWhenTwoChar() {
-        String nbStr = converterService.convert(26);
-        assertTrue(nbStr.equals("twenty six"));
+        String nbStr = converterService.convert(96);
+        assertTrue(nbStr.equals("ninety six"));
     }
 
     @Test

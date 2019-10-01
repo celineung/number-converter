@@ -3,39 +3,47 @@ package com.example.converter.helpers;
 
 public class ConverterHelper {
 
-    public static final String[] units = {
+    private static final String[] units = {
             "",
-            "One",
-            "Two",
-            "Three",
-            "Four",
-            "Five",
-            "Six",
-            "Seven",
-            "Eight",
-            "Nine",
-            "Ten",
-            "Eleven",
-            "Twelve",
-            "Thirteen",
-            "Fourteen",
-            "Fifteen",
-            "Sixteen",
-            "Seventeen",
-            "Eighteen",
-            "Nineteen"
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine",
+            "ten",
+            "eleven",
+            "twelve",
+            "thirteen",
+            "fourteen",
+            "fifteen",
+            "sixteen",
+            "seventeen",
+            "eighteen",
+            "nineteen"
     };
 
-    public static final String[] tens = {
+    private static final String[] ten_multiple = {
             "",
             "",
-            "Twenty",
-            "Thirty",
-            "Forty",
-            "Fifty",
-            "Sixty",
-            "Seventy",
-            "Eighty",
-            "Ninety"
+            "twenty",
+            "thirty",
+            "forty",
+            "fifty",
+            "sixty",
+            "seventy",
+            "eighty",
+            "ninety"
     };
+
+    public static final String mapUnitToString(int number) {
+        return units[number];
+    }
+
+    public static final String mapTenMultipleToString(int number) {
+        return ten_multiple[number];
+    }
 }
